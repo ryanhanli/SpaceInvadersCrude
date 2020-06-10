@@ -21,7 +21,7 @@ class Game:
 
         while not done:
             if len(self.aliens) == 0:
-                self.displayText("VICTORY ACHIEVED")
+                self.displayText("YOU WIN")
 
             pressed = pygame.key.get_pressed()
             if pressed[pygame.K_LEFT]:
@@ -44,7 +44,7 @@ class Game:
                 alien.checkCollision(self)
                 if (alien.y > height):
                     self.lost = True
-                    self.displayText("YOU DIED")
+                    self.displayText("GAME OVER")
 
             for rocket in self.rockets:
                 rocket.draw()
